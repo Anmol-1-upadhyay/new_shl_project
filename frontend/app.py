@@ -16,7 +16,7 @@ if st.button("Get Recommendations"):
         with st.spinner("Analyzing query and finding best assessments..."):
             try:
                 response = requests.post(
-                    "http://localhost:8000/recommend",
+                    "https://new-shl-project.onrender.com/recommend",
                     json={"query": query},
                     timeout=30
                 )

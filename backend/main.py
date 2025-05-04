@@ -8,6 +8,15 @@ from groq import Groq
 import json
 import re
 import logging
+import os
+import json
+
+# Safe absolute path for both local and Render
+json_path = os.path.join(os.path.dirname(__file__), '..', 'data', 'products.json')
+
+# Normalize the path
+json_path = os.path.normpath(json_path)
+
 
 # Configuration
 logging.basicConfig(level=logging.INFO)
@@ -46,7 +55,7 @@ def initialize_chroma():
     )
     
     if not collection.count():
-        with open("data\products.json") as f:
+        with open(json_path, encoding="utf-8") as f:
             products = json.load(f)
         
         documents = []

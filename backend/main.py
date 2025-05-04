@@ -46,7 +46,7 @@ def initialize_chroma():
     )
     
     if not collection.count():
-        with open("C:\\Users\\Anmol Upadhyay\\new_shl_project\\data\\products.json", encoding="utf-8") as f:
+        with open("data\products.json") as f:
             products = json.load(f)
         
         documents = []
